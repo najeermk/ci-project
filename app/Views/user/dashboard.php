@@ -2,14 +2,14 @@
 
 <?= $this->section("content") ?>
 
-<div>
-    <h1>Dashboard</h1>
-    <h2>
+<div class="container">
+    <h3>Dashboard</h3>
+    <h5>
         <?php 
             $session = session();
             echo "Welcome " . $session->get('name'); 
         ?>        
-    </h2> 
+    </h5> 
     <br>
     <p><a href="<?php echo base_url(); ?>/user/logout">Logout</a></p>
 </div>

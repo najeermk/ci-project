@@ -2,9 +2,9 @@
 
 <?= $this->section("content") ?>
 
-<div>
+<div class="container">
                 
-    <h2>Log in</h2>
+    <h3>Log in</h3>
     
     <?php if(session()->getFlashdata('msg')):?>
         <div>
@@ -12,21 +12,22 @@
         </div>
     <?php endif;?>
     <form action="<?php echo base_url(); ?>/user/signinAuth" method="post">
-        <div>
-            <input type="email" name="email" placeholder="Email">
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" name="email" class="form-control" id="email">
         </div>
-        <div>
-            <input type="password" name="password" placeholder="Password">
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" id="password">
         </div>
-        
-        <div>
-             <button type="submit">Signin</button>
-        </div>
-        <br>
-        <div>
-        	<p>Not a user sign up <a href="<?php echo base_url(); ?>/user">here</a></p>
-        </div>     
+        <button type="submit" class="btn btn-primary">Sign In</button>          
     </form>
+
+    <br>
+    <div>
+        <p>Not a user sign up <a href="<?php echo base_url(); ?>/user">here</a></p>
+    </div>
+
 </div>
 
 <?= $this->endSection() ?>
