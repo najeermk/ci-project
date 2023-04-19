@@ -3,7 +3,15 @@
 <?= $this->section("content") ?>
 
 <div>
-    <h2>Welcome <?= $session->get('name'); ?></h2> 
+    <h1>Dashboard</h1>
+    <h2>
+        <?php 
+            $session = session();
+            echo "Welcome " . $session->get('name'); 
+        ?>        
+    </h2> 
+    <br>
+    <p><a href="<?php echo base_url(); ?>/user/logout">Logout</a></p>
 </div>
 
-<?= $this->endSection() ?
+<?= $this->endSection() ?>

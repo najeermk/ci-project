@@ -7,8 +7,7 @@ class UserController extends BaseController
 
 	public function dashboard()
     {
-        $session = session();
-        return view('user\dashboard', $session);
+        return view('user\dashboard');
     }
 
 	public function register() 
@@ -44,7 +43,7 @@ class UserController extends BaseController
 		return view('user\signin');
 	}
 
-	public function signupAuth()
+	public function signinAuth()
 	{
 		$session = session();
         $user = new User();
@@ -72,6 +71,13 @@ class UserController extends BaseController
             $session->setFlashdata('msg', 'Email does not exist.');
             return redirect()->to('user/signin');
         }
+	}
+
+	public function logout()
+	{
+		$session = session();
+		$session->destroy();
+		return redirect()->to('user/signin');
 	}
 
 }

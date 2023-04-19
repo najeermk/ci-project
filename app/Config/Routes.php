@@ -31,10 +31,11 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'UserController::signin');
 $routes->get('/user', 'UserController::register');
-$routes->match(['get', 'post'], '/user/signup', 'UserController::signup');
+$routes->match(['get', 'post'], 'user/signup', 'UserController::signup');
 $routes->get('/user/signin', 'UserController::signin');
-$routes->match(['get', 'post'], '/user/signinAuth', 'UserController::signinAuth');
+$routes->match(['get', 'post'], 'user/signinAuth', 'UserController::signinAuth');
 $routes->get('/dashboard', 'UserController::dashboard',['filter' => 'authGuard']);
+$routes->get('/user/logout', 'UserController::logout',['filter' => 'authGuard']);
 
 /*
  * --------------------------------------------------------------------

@@ -22,6 +22,10 @@
 	    <div>
 	        <button type="submit">Signup</button>
 	    </div>
+	    <br>
+        <div>
+        	<p>Already a user sign in <a href="<?php echo base_url(); ?>/user/signin">here</a></p>
+        </div>
 	</form>
 </div>
 

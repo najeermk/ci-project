@@ -4,7 +4,7 @@
 
 <div>
                 
-    <h2>Login in</h2>
+    <h2>Log in</h2>
     
     <?php if(session()->getFlashdata('msg')):?>
         <div>
